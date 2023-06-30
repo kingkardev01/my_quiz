@@ -15,7 +15,7 @@ class ForgotPasswordOtp extends StatelessWidget {
                   children: [
                     SizedBox(height: height *0.2,),
                     Container(
-                      child: Text("Quiz App",style: Theme.of(context).textTheme.headlineLarge,),
+                      child: Text("Quiz App",style: Theme.of(context).textTheme.headlineLarge?.copyWith(color: Colors.black),),
                     ),
                     Text("Verification")
                   ],
