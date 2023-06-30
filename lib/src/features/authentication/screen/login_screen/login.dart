@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:quiz_app/src/features/authentication/screen/singup_screen/singup.dart';
 import '../../../../constants/image_constants/image.dart';
 import '../../../../constants/text_constants/text.dart';
+import '../forgot_password/forgot_password_options/build_show_modal_bottom_sheet.dart';
+import '../forgot_password/forgot_password_options/forgot_pass_btn_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -84,22 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         alignment: Alignment.bottomRight,
                         child: TextButton(
                             onPressed: () {
-                              showModalBottomSheet(context: context, builder: (context)=> Container(
-                                color: Colors.yellow,
-                                padding: EdgeInsets.all(30.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(forgotPassTitle,style: Theme.of(context).textTheme.displaySmall,),
-                                    Text(forgotPassSubTitle,style:Theme.of(context).textTheme.titleMedium ,),
-                                    Container(
-                                      height: 100,
-                                      color: Colors.green,
-
-                                    )
-                                  ],
-                                ),
-                              ));
+                              buildShowModalBottomSheet(context);
                             }, child: Text("Forget Password")))
                   ],
                 )),
@@ -163,6 +150,8 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
+
+
   void passwordVisiable() {
     setState(() {
       isValue = !isValue;
@@ -170,3 +159,4 @@ class _LoginScreenState extends State<LoginScreen> {
     // FocusScope.of(context).requestFocus(new FocusNode());
   }
 }
+
