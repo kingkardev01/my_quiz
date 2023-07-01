@@ -26,3 +26,7 @@ const String forgotPassSubTitle = "Select one of the options given below to rese
 
 const String forgotEmail = "E-Mail";
 const String forgotEmailSubTitle = "Reset via Mail Verification.";
+
+//forgot password otp
+const String tOptSubTitle = "Verification";
+const String tOptMessage = "Enter the verification code sent at";

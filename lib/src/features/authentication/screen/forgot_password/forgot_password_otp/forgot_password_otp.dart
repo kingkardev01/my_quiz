@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/src/features/authentication/screen/login_screen/login.dart';
+
+import '../../../../../constants/text_constants/text.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:get/get.dart';
 
 class ForgotPasswordOtp extends StatelessWidget {
   const ForgotPasswordOtp({Key? key}) : super(key: key);
@@ -13,11 +18,36 @@ class ForgotPasswordOtp extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    SizedBox(height: height *0.2,),
+                    SizedBox(height: height *0.3,),
                     Container(
                       child: Text("Quiz App",style: Theme.of(context).textTheme.headlineLarge?.copyWith(color: Colors.black),),
                     ),
-                    Text("Verification")
+                    Text(tOptSubTitle.toUpperCase(),style: Theme.of(context).textTheme.titleLarge,),
+                    SizedBox(height: height *0.06),
+                    Text("$tOptMessage  support@codingwitht.com" ,textAlign: TextAlign.center, ),
+                    SizedBox(height: height *0.07),
+                    OtpTextField(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      numberOfFields: 6,
+                      borderColor: Color(0xFF512DA8),
+                      fillColor: Colors.black.withOpacity(0.1),
+                      filled: true,
+                      onSubmit: (code){
+                        print("Otp is = $code");
+                      },
+                    ),
+                    SizedBox(height: height *0.07),
+                    Container(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: (){
+                          Get.to(LoginScreen());
+                        },
+                        child: Text("Next"),
+                      ),
+                    )
+
+
                   ],
                 ),
               ),
