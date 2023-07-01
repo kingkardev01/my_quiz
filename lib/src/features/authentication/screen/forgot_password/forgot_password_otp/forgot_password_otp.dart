@@ -43,7 +43,7 @@ class ForgotPasswordOtp extends StatelessWidget {
                         onPressed: (){
                           Get.to(LoginScreen());
                         },
-                        child: Text("Next"),
+                        child: Text("Next To"),
                       ),
                     )
 
