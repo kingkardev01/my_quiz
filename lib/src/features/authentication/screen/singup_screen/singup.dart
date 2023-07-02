@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quiz_app/src/features/authentication/controllers/sing_up_controller/singup_controller.dart';
+import 'package:quiz_app/src/features/authentication/screen/forgot_password/forgot_password_otp/forgot_password_otp.dart';
 import 'package:quiz_app/src/features/authentication/screen/login_screen/login.dart';
 import '../../../../constants/image_constants/image.dart';
 import '../../../../constants/text_constants/text.dart';
@@ -161,9 +162,14 @@ class _SingUpScreenState extends State<SingUpScreen> {
                       child: ElevatedButton(
                         onPressed: () {
                           if(_formKey.currentState!.validate()){
-                            SingUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
-                            print(controller.email.text);
-                            print(controller.password.text);
+                            // SingUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
+                            // print(controller.email.text);
+                            // print(controller.password.text);
+                            SingUpController.instance.phoneAuthentication(controller.phoneNo.text.trim());
+                            print(controller.phoneNo.text);
+                            Get.to(ForgotPasswordOtp());
+                            
+
 
 
                           }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/src/features/authentication/controllers/otp_controller/otp_controller.dart';
 import 'package:quiz_app/src/features/authentication/screen/login_screen/login.dart';
 
 import '../../../../../constants/text_constants/text.dart';
@@ -10,6 +11,8 @@ class ForgotPasswordOtp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var otpController = Get.put(OTPController());
+    var otp;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
             body: SingleChildScrollView(
@@ -33,7 +36,7 @@ class ForgotPasswordOtp extends StatelessWidget {
                       fillColor: Colors.black.withOpacity(0.1),
                       filled: true,
                       onSubmit: (code){
-                        print("Otp is = $code");
+                        otp = code;
                       },
                     ),
                     SizedBox(height: height *0.07),
@@ -41,7 +44,7 @@ class ForgotPasswordOtp extends StatelessWidget {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: (){
-                          Get.to(LoginScreen());
+                         OTPController.instance.verifyOtp1(otp);
                         },
                         child: Text("Next To"),
                       ),
