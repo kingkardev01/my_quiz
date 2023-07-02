@@ -27,7 +27,7 @@ class ForgotPasswordOtp extends StatelessWidget {
                     ),
                     Text(tOptSubTitle.toUpperCase(),style: Theme.of(context).textTheme.titleLarge,),
                     SizedBox(height: height *0.06),
-                    Text("$tOptMessage  support@codingwitht.com" ,textAlign: TextAlign.center, ),
+                    Text("$tOptMessage  support@kingit.com" ,textAlign: TextAlign.center, ),
                     SizedBox(height: height *0.07),
                     OtpTextField(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -37,6 +37,7 @@ class ForgotPasswordOtp extends StatelessWidget {
                       filled: true,
                       onSubmit: (code){
                         otp = code;
+                        OTPController.instance.verifyOtp(otp);
                       },
                     ),
                     SizedBox(height: height *0.07),
@@ -44,7 +45,7 @@ class ForgotPasswordOtp extends StatelessWidget {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: (){
-                         OTPController.instance.verifyOtp1(otp);
+                          OTPController.instance.verifyOtp(otp);
                         },
                         child: Text("Next To"),
                       ),
