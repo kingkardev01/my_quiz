@@ -23,7 +23,7 @@ class AuthenticationRepository extends GetxController{
    ever(firebaseUser, setInitialScreen);
  }
 
-
+// first where screen go
   setInitialScreen(User? user) {
    user == null ? Get.off(() => const WelcomeScreenDesign()) : Get.offAll(()=> const DashBoardScreen());
   }
@@ -58,7 +58,7 @@ class AuthenticationRepository extends GetxController{
 
    return credentials.user != null ? true : false;
   }
-
+// for email and password singup
   Future<void> createUserWithEmailAndPassword(String email,String password) async{
   try{
      await _auth.createUserWithEmailAndPassword(
@@ -77,7 +77,7 @@ class AuthenticationRepository extends GetxController{
   }
 
  }
-
+//for sing in
   Future<void> signInWithEmailAndPassword(String email,String password) async{
     try{
        await _auth.signInWithEmailAndPassword(
@@ -89,7 +89,7 @@ class AuthenticationRepository extends GetxController{
     }catch(_){}
 
   }
-
+// for singOut function
   Future<void> logout() async => await _auth.signOut();
 
 

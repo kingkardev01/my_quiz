@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quiz_app/src/features/authentication/controllers/sing_in_controller/sing_in_controller.dart';
 import 'package:quiz_app/src/features/authentication/screen/singup_screen/singup.dart';
 import '../../../../constants/image_constants/image.dart';
 import '../../../../constants/text_constants/text.dart';
@@ -15,6 +16,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   bool isValue = true;
+
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +102,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 50,
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                        },
                         child: Text("login".toUpperCase()),
                       ),
                     ),

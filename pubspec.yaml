@@ -21,6 +21,7 @@ dependencies:
   firebase_auth: ^4.6.3
   line_awesome_flutter: ^2.0.0
   flutter_otp_text_field: ^1.1.1
+  cloud_firestore: ^4.8.2
 
 
 dev_dependencies:
